@@ -5,6 +5,9 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/auth/', include('dj_rest_auth.urls')),  # Endpoints de autenticação
+    path('api/auth/registration/', include('dj_rest_auth.registration.urls')),  # Endpoints de registro
+
     path('api/core/', include('core.urls')),
     path('api/petsync/', include('petsync.urls')),
 
